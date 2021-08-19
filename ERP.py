@@ -3,7 +3,7 @@ employees={}
 teams={}
 org={}
 def main_menu():
-	print("Press 1 for add employee")
+	print("\nPress 1 for add employee")
 	print("Press 2 for delete employee ")
 	print("Press 3 for search employee")
 	print("Press 4 for display  employee")
@@ -41,16 +41,7 @@ def delete_employee():
 	else:
 		del employees[eid]
 
-#def search_employee():
-#	name = input("\tEnter name")
-#	found = False
-#	for i in employees.values():
-#		if i["name"] == name: 
-#			print(f"\t{i['name']} | {i['age']} | {i['place']} | {i['gender']} | {i['previous_company']} | {i['salary']} ")
-#			found = True
-#			break
-#		if found==False:
-#			print("\tnot in the list")
+
 def search_employee():
 	
 	print("Press 1 for search by name")
@@ -141,15 +132,20 @@ def manage_all_team():
 			break;
 		else:
 			print("invalid option")
+			
+			
 def create_team():
 	team_name=input("\tEnter team name : ")
 	teams[team_name]=[]
+	
+	
 def display_team():
 	for key,value in teams.items(): 
 		name_string = ""
 		for i in value:
 			name_string = name_string +"|"+employees[i]["name"]
 		print(f"{key} => {name_string}")
+		
 	
 def delete_team():
 	team_name=input("\tEnter team name ")
@@ -158,6 +154,8 @@ def delete_team():
 		print("\t Deleted the  team ")
 	else:
 		print("\t incorrect name ")
+		
+		
 def manage_team_menu():
 	print("\t press 1. Add member ")
 	print("\t press 2. Delete member ")
@@ -185,7 +183,7 @@ def manage_team():
 def add_member(team_name):
 	display_employee()
 	eid=int(input("\t\t Enter the employee id of employee "))
-	if eid in employees.key():
+	if eid in employees.keys():
 		teams[team_name].append(eid)
 	else:
 		print("\t\t wrong eid")
@@ -201,25 +199,27 @@ def delete_member(team_name):
 def display_member(team_name):
 	name_string=""
 	for i in teams[team_name]:
-		name_string=name_string +"|"+i+"."+employee[i]["name"]
+		name_string=name_string +"|"+str(i)+"."+employees[i]["name"]
 	print(f"{name_string}")
 
-def add_oganization():
-	org['name']=input("enter organization name")
-	org['email']=input("enter organization  email")
+def add_organization():
+	org['name']=input("enter organization name : ")
+	org['email']=input("enter organization  email : ")
 
-def edit_oganization():
+def edit_organization():
 	print("1 for Edit Organization name ")
 	print("2 for Edit Organization email")
 	choice = int(input("Enter choice: "))
 	if choice == 1:
-		org['name'] = input("enter new organization name")
+		org['name'] = input("enter new organization name : ")
 	elif choice == 2:
-		org['email'] = input("enter new organization email")	
+		org['email'] = input("enter new organization email : ")	
 	else:
 		print("invalid choice")
+		
 def display_organization():
 	print(org)
+	
 def org_details():
 	print("enter 1 for Add Organization")
 	print("enter 2 for Edit Organization")
@@ -229,9 +229,9 @@ def org_details():
 	
 		choice = int(input("Enter choice : "))
 		if choice == 1:
-			add_oganization()
+			add_organization()
 		elif choice == 2:
-			edit_oganization()
+			edit_organization()
 		elif choice == 3:
 			display_organization()
 		elif choice == 4:
