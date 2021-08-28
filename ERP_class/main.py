@@ -1,3 +1,4 @@
+from user import User
 from employee import Employee
 from emp_store import employees
 import employee as e
@@ -18,16 +19,9 @@ while True:
 	choice = int(input("Enter your choice : "))
 	if choice == 1:
 
-		e_id = input("\tEnter employee id : ")
-		name = input("\tEnter name : ")
-		age = input("\tEnter employee age : ")
-		gender = input("\tEnter gender : ")
-		place = input("\tEnter place : ")
-		salary = input("\tEnter salary : ")
-		previous_company = input("\tEnter previous company : ")
-		joining_date = input("\tEnter joining_date : ")
-		st_temp=Employee(e_id,name,age,gender,place,salary,previous_company,joining_date)
-		e.employees.append(st_temp)
+		
+		employees.append(Employee())
+		employees[-1].insert()
 
 
 	elif choice == 2:#delete 
@@ -42,7 +36,7 @@ while True:
 		
 	elif choice == 4:
 		for i in employees:
-			print(f"{i.e_id} |{i.name} | {i.age} | {i.gender} | {i.place} | {i.salary}| {i.previous_company} | {i.joining_date}")
+			i.display()
 	elif choice == 5:
 		c.change_main()
 	elif choice == 6:

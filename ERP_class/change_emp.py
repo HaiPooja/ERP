@@ -13,8 +13,8 @@ def change_main():
 		change_menu()
 		choice=int(input("Enter your choice : "))
 		if choice == 1:#change name
-			e_id = input("Enter Employee id: ")
-			st_temp  = list(filter(lambda a: a.e_id == e_id,employees))
+			name = input("Enter Employee name: ")
+			st_temp  = list(filter(lambda a: a.name == name,employees))
 			st_temp[0].set_name(input("Enter new name: "))
 			
 		elif choice == 2:#change age
