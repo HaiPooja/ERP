@@ -9,21 +9,21 @@ def org_details():
 	
 		choice = int(input("Enter choice : "))
 		if choice == 1:
-			add_oganization()
+			add_organization()
 		elif choice == 2:
-			edit_oganization()
+			edit_organization()
 		elif choice == 3:
 			display_organization()
 		elif choice == 4:
 			break
 		else:
 			print("Invalid choice")	
-def add_oganization():
+def add_organization():
 	#add oraganization
 	org['name']=input("enter organization name : ")
 	org['email']=input("enter organization  email : ")
 
-def edit_oganization():
+def edit_organization():
 	print("1 for Edit Organization name ")
 	print("2 for Edit Organization email")
 	choice = int(input("Enter choice: "))
